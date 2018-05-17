@@ -35,6 +35,7 @@ class UniverseController {
 
   // initialize the grid and set the interval to check the state of the seeds
   createUniverse() {
+    this.$interval.cancel(this.interval);
     this.createSeeds();
     this.interval = this.$interval(() => {
       this.grid = this.universeService.updateUniverse(this.grid);
