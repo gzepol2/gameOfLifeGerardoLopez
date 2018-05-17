@@ -23,8 +23,14 @@ const universeService = function (
     return grid;
   };
 
+  /**
+  * @returns {Object} the constants configuration
+  */
+  const getConstants = () => constants;
+
   return {
     createGrid,
+    getConstants,
   };
 };
 

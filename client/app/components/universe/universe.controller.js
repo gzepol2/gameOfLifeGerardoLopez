@@ -1,8 +1,11 @@
 class UniverseController {
   /* @ngInject */
-  constructor(UniverseService) {
+  constructor($interval, UniverseService) {
     this.name = 'universe';
+    this.$interval = $interval;
+    this.interval = null;
     this.universeService = UniverseService;
+    this.constants = this.universeService.getConstants();
     this.grid = { rows: [] };
     this.seedsCoordinates = [
       { row: 0, column: 0 },
@@ -34,6 +37,9 @@ class UniverseController {
   // initialize the grid and set the interval to check the state of the seeds
   createUniverse() {
     this.createSeeds();
+    this.interval = this.$interval(() => {
+      console.log("interval");
+    }, this.constants.TIME_STEP);
   }
 
 
