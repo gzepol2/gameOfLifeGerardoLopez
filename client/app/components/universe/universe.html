@@ -1,3 +1,7 @@
 <table>
-
+  <tr ng-repeat="row in $ctrl.grid.rows">
+    <td ng-repeat="col in row.columns"
+        ng-class="{'alive': col.age === 1, 'dead': col.age > 1 }">
+    </td>
+    </tr>
 </table>

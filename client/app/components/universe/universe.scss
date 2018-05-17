@@ -1,0 +1,28 @@
+$color-alive: aqua;
+$dead-color: coral;
+$cell-size: 20px;
+
+table, th, td {
+    border: 1px solid silver;
+    border-collapse: collapse;
+}
+
+table {
+  background-color: darkslategray;
+  margin: auto;
+}
+
+td {
+  width: $cell-size;
+  height: $cell-size;
+}
+
+.alive {
+  background-color: $color-alive;
+  border-radius: $cell-size;
+}
+
+.dead {
+  background-color: $dead-color;
+  border-radius: $cell-size;
+}
