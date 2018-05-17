@@ -15,7 +15,6 @@ class UniverseController {
       { row: 2, column: 1 },
       { row: 2, column: 2 },
     ];
-
   }
 
   $onInit() {
@@ -38,7 +37,7 @@ class UniverseController {
   createUniverse() {
     this.createSeeds();
     this.interval = this.$interval(() => {
-      console.log("interval");
+      this.grid = this.universeService.updateUniverse(this.grid);
     }, this.constants.TIME_STEP);
   }
 
