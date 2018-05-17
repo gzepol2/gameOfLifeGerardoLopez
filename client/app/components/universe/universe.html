@@ -1,7 +1,8 @@
 <table>
   <tr ng-repeat="row in $ctrl.grid.rows">
     <td ng-repeat="col in row.columns"
-        ng-class="{'alive': col.age === 1, 'dead': col.age > 1 }">
+        ng-class="{'alive': col.age === 1, 'dead': col.age > 1 }"
+        ng-click="$ctrl.initializeSeed($ctrl.grid.rows.indexOf(row), $index)">
     </td>
     </tr>
 </table>
